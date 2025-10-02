@@ -1,0 +1,21 @@
+
+name: Email Constraint Action Runner
+on:
+  push:
+    branches: [ main ]
+  workflow_dispatch:
+
+jobs:
+  check_name:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+
+      - name: 23f3004149@ds.study.iitm.ac.in
+        run: |
+          echo "Verification step successfully executed."
+          echo "The current timestamp is $(date)"
+
+      - name: Workflow Completion
+        run: echo "The workflow finished and satisfied the naming constraint."
