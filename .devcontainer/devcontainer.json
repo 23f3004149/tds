@@ -1,0 +1,32 @@
+{
+"name": "ga2-fda431",
+// Use a minimal Debian base image, and let the Python feature handle the heavy lifting.
+"image": "https://www.google.com/search?q=mcr.microsoft.com/devcontainers/base:debian",
+
+"features": {
+// Install Python 3.11 and the 'uv' package installer
+"ghcr.io/devcontainers/features/python:1": {
+"version": "3.11",
+"installUv": true
+}
+},
+
+"customizations": {
+"vscode": {
+"extensions": [
+"astral-sh.uv",
+"ms-python.python"
+]
+}
+},
+
+// Use 'uv' to install the 'fastapi' dependency immediately after the container is created
+"postCreateCommand": "uv pip install fastapi",
+
+// Forward the deployment port 7276 for local testing
+"forwardPorts": [7276],
+
+// Ensure Codespace starts with the terminal open
+"waitFor": "postCreateCommand",
+"postAttachCommand": "uv --version"
+}
