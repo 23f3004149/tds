@@ -1,0 +1,20 @@
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# Dependencies
+venv/
+.env
+pip-wheel-metadata/
+build/
+dist/
+eggs/
+*.egg-info/
+wheels/
+
+# Testing
+.pytest_cache/
+.coverage
+htmlcov/
